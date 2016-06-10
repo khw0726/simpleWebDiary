@@ -1,24 +1,13 @@
-<html>
+{% extends 'diary/base.html' %}
 
-	<head>
-		<title> {{ title }} </title>
-	</head>
-
-	<body>
-		<div>
-			<h1><a href="">Test Diary</a></h1>
-		</div>
-		
+{% block content %}
 		{% for post in posts %}
-			<div>
+			<div class="posts_list">
 				<p>published: {{ post.published_date }}</p>
 				<h2><a href="">{{ post.title }}</a></h2>
 				<p>{{ post.test|linebreaks }}</p>
 				
 			</div>
 		{% endfor %}
-				
-				
-	</body>
-	
-</html>
+		
+{% endblock content %}
